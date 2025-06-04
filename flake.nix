@@ -38,6 +38,12 @@
             nativeBuildInputs = common-tools ++ (with pkgs; [
               go
             ]);
+
+            hardeningDisable = [ "fortify" ];
+
+            shellHook = ''
+              echo "In Go development environment" | lolcat
+            '';
           };
         };
     };
